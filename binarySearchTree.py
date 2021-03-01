@@ -13,7 +13,7 @@ class Tree:
 
     def add(self, value):
         if (self.root == None):
-            self.root == Node(value)
+            self.root = Node(value)
         else:
             self._add(value, self.root)
     
@@ -36,7 +36,7 @@ class Tree:
             return None
     
     def _search(self, value, node):
-        if (value === node.data):
+        if (value == node.data):
             return node  
         elif (value < node.data and node.left != None):
             self._search(value, node.left)
@@ -129,3 +129,20 @@ class Tree:
                     delParent.left = None
                 else:
                     delParent.right = None
+
+
+a = Tree()
+a.add(52)
+a.add(18)
+a.add(7)
+a.add(25)
+a.add(19)
+a.add(60)
+a.add(72)
+a.add(98)
+a.add(63)
+a.preOrder()
+print ('---------------------')
+a.remove(19)
+a.preOrder()
+print ('-----------------')
