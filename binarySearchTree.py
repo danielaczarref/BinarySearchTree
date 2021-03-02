@@ -37,13 +37,13 @@ class Tree:
     
     def _search(self, value, node):
         if (value == node.data):
-            return node  
+            return print(node.data)
         elif (value < node.data and node.left != None):
             self._search(value, node.left)
-            print(value, True)
         elif (value > node.data and node.right != None):
             self._search(value, node.right)
-            print(value, True)
+        else:
+            return print(value, ': 404 - Not found')
 
     def preOrder(self):
         if (self.root != None):
@@ -59,6 +59,7 @@ class Tree:
         if self.root is None:
             return False
 
+        #when its value is on self.root
         elif self.root.data == value:
             if self.root.left is None and self.root.right is None:
                 self.root = None
@@ -91,6 +92,7 @@ class Tree:
         parent = None
         newNode = self.root
 
+        #find node to remove
         while newNode and newNode.data != value:
             parent = newNode
             if value  < newNode.data:
@@ -146,3 +148,5 @@ print ('---------------------')
 a.remove(19)
 a.preOrder()
 print ('-----------------')
+a.search(63)
+a.search(19)
