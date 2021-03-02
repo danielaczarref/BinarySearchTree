@@ -59,7 +59,6 @@ class Tree:
         if self.root is None:
             return False
 
-        #when its value is on self.root
         elif self.root.data == value:
             if self.root.left is None and self.root.right is None:
                 self.root = None
@@ -92,7 +91,6 @@ class Tree:
         parent = None
         newNode = self.root
 
-        #find node to remove
         while newNode and newNode.data != value:
             parent = newNode
             if value  < newNode.data:
@@ -131,22 +129,3 @@ class Tree:
                     delParent.left = None
                 else:
                     delParent.right = None
-
-
-a = Tree()
-a.add(52)
-a.add(18)
-a.add(7)
-a.add(25)
-a.add(19)
-a.add(60)
-a.add(72)
-a.add(98)
-a.add(63)
-a.preOrder()
-print ('---------------------')
-a.remove(19)
-a.preOrder()
-print ('-----------------')
-a.search(63)
-a.search(19)
